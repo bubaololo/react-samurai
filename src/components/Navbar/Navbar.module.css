@@ -7,6 +7,6 @@
   align-items: center;
   gap: 10px;
 }
-.item.active {
-  color: cadetblue;
+ .item a {
+  text-decoration: none;
 }

@@ -1,13 +1,30 @@
 import classes from "./Navbar.module.css";
+import { NavLink } from "react-router-dom";
+
+let activeStyle = {
+  fontWeight: "bolder",
+};
+
+let activeClassName = "underline";
 
 const Navbar = function () {
   return (
     <nav className={classes.nav}>
-      <div className={`${classes.item} ${classes.active}`}  >
-        <a>Profile</a>
+      <div className={classes.item}>
+        <NavLink
+          to="/profile"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          Profile
+        </NavLink>
       </div>
       <div className={classes.item}>
-        <a>Messages</a>
+        <NavLink
+          to="/dialogs"
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        >
+          Messages
+        </NavLink>
       </div>
       <div className={classes.item}>
         <a>News</a>

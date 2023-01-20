@@ -18,9 +18,9 @@ const MyPosts = function () {
         </form>
       </div>
       <div className={styles.post__wrapper}>
-        <Post />
-        <Post />
-        <Post />
+        <Post text='Hey you, yes you! Fuck off!' like='2' />
+        <Post text='and you fuck off too' like='3' />
+        <Post text='and you' />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import styles from "./Post.module.css";
 
-const Post = function () {
+const Post = function (props) {
   return (
     
 
@@ -9,10 +9,10 @@ const Post = function () {
             <div className={styles.post__ava}></div>
             <div className={styles.post__content}>
     <div className={styles.post__text}>
-      Hey you, yes you! Fuck off!
+      {props.text}
       </div>
     <div className={styles.post__like}>
-      Like
+     {props.like} Like
       </div>
               
 

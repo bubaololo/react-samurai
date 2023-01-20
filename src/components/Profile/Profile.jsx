@@ -3,7 +3,7 @@ import classes from "./Profile.module.css";
 
 const Profile = function () {
   return (
-    <div className="content">
+    <div>
       <div className={classes.heroImg}></div>
       <div className={classes.person}>
         <div className={classes.person__ava}></div>

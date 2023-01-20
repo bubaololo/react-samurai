@@ -4,7 +4,7 @@ li {
 .yolo {
   color: crimson;
 }
-.app-wrapper {
+.app_wrapper {
   max-width: 1300px;
   margin: 0 auto;
   display: grid;
@@ -19,7 +19,7 @@ li {
 
 
 
-.content {
+.content_wrapper {
 grid-area: c;
 background-color: bisque;
 padding: 0 20px;

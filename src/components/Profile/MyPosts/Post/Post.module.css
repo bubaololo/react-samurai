@@ -1,0 +1,21 @@
+.post {
+    display: block;
+    margin: 16px 0;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.post__ava {
+    width: 60px;
+    height: 60px;
+    background-image: url(https://propagandahistory.ru/pics/2011/07/1311894685_35f0.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 128%;
+}
+.post__content {
+padding: 12px;
+}
+

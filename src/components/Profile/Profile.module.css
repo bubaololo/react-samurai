@@ -1,0 +1,27 @@
+.heroImg {
+  height: 200px;
+  width: 100%;
+  margin: 20px 0;
+  background-image: url(https://deih43ym53wif.cloudfront.net/bali-indonesia-shutterstock_459773704_0dd494ecf7.jpeg);
+  background-repeat: no-repeat;
+}
+.person {
+  display: flex;
+  align-items: center;
+}
+.person__ava {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 16px;
+  background-image: url(https://propagandahistory.ru/pics/2011/07/1311894685_35f0.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 128%;
+}
+.person__name {
+    font-weight: bold;
+}
+.person__desc {
+    font-style: italic;
+}

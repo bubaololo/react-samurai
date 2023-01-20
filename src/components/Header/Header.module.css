@@ -1,0 +1,9 @@
+.header {
+  grid-area: h;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+.logo {
+  height: 40px;
+  transform: translateY(-20%);
+}

@@ -1,43 +1,55 @@
-import styles from './Dialogs.module.css';
-import {NavLink, Routes, Route} from 'react-router-dom';
+import styles from "./Dialogs.module.css";
+import { NavLink, Routes, Route } from "react-router-dom";
 
 const DialogItem = (props) => {
-  let path = "/dialogs/" + props.id
-  console.log(path);
+  let path = "/dialogs/" + props.id;
   return (
-      <div className={styles.dialog + ' ' + styles.active}>
-        <NavLink to={path} >{props.name}</NavLink>
+    <div className={styles.dialog + " " + styles.active}>
+      <NavLink to={path}>{props.name}</NavLink>
+    </div>
+  );
+};
+
+
+const Message = (props) => {
+  return <div className={styles.message}>{props.message}</div>;
+};
+const Dialogs = function (props) {
+  let dialogsData = [
+    {id: 1, name: "Вася"},
+    {id: 2, name: "Петя"},
+    {id: 3, name: "Коля"},
+    {id: 4, name: "Рашид"},
+    {id: 5, name: "Аюуюакр"},
+    {id: 6, name: "Евгений"}
+  ]
+  let messagesData = [
+    {id: 1, message: "Ты кто такой"},
+    {id: 2, message: "Не хочешь заработать?"},
+    {id: 3, message: "Заработок на р2р"},
+
+  ]
+
+  return (
+    <div className={styles.dialogs}>
+      <div className={styles.dialogsItems}>
+        <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
+        <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
+
       </div>
-  )
-}
-const Dialogs = function() {
-  return <div className={styles.dialogs}>
-
-    <div className={styles.dialogsItems}>
-<DialogItem name="Вася" id="1" />
-      {/*<div className={styles.dialog}>*/}
-      {/*  <NavLink to="/dialogs/2">Петя</NavLink>*/}
-      {/*</div>*/}
-      {/*<div className={styles.dialog}>*/}
-      {/*  <NavLink to="/dialogs/3">Петя</NavLink>*/}
-      {/*</div>*/}
-      {/*<div className={styles.dialog}>*/}
-      {/*  <NavLink to="/dialogs/4">Коля</NavLink>*/}
-      {/*</div>*/}
-      {/*<div className={styles.dialog}>*/}
-      {/*  <NavLink to="/dialogs/5">Сашок</NavLink>*/}
-      {/*</div>*/}
+      <div className={styles.messages}>
+        <Message message={messagesData[0].message} />
+        <Message message={messagesData[1].message} />
+        <Message message={messagesData[2].message} />
+      </div>
+      <Routes>
+        <Route
+          exact
+          path="dialogs/1"
+          element={<DialogItem name="Вася" id="1" />}
+        ></Route>
+      </Routes>
     </div>
-    <div className={styles.messages}>
-      <div className={styles.message}>Ты кто такой</div>
-      <div className={styles.message}>Не хочешь заработать?</div>
-      <div className={styles.message}>Заработок на р2р</div>
-    </div>
-    <Routes>
-      <Route  path="dialogs/1" element={<DialogItem name="Вася" id="1" />}>
-
-      </Route>
-    </Routes>
-  </div>
-}
-export default Dialogs
+  );
+};
+export default Dialogs;

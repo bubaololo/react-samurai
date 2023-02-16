@@ -1,18 +1,12 @@
 import MyPosts from "./MyPosts/MyPosts";
 import classes from "./Profile.module.css";
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = function () {
   return (
     <div>
-      <div className={classes.heroImg}></div>
-      <div className={classes.person}>
-        <div className={classes.person__ava}></div>
-        <div className={classes.person__info}>
-          <div className={classes.person__name}>Бубашвили Георг Маркелович</div>
-          <div className={classes.person__desc}>пыхолог</div>
-        </div>
-      </div>
-    <MyPosts />
+<ProfileInfo />
+      <MyPosts />
     </div>
   );
 };

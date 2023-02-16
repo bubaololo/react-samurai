@@ -2,6 +2,13 @@ import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = function () {
+let postData = [
+  {id:1, message: 'Hey you, yes you! Fuck off!', likesCount: 2},
+  {id:1, message: 'and you fuck off too', likesCount: 3},
+  {id:1, message: 'and you', likesCount: 0},
+]
+
+
   return (
     <div className={styles.posts}>
       <h2 className={styles.posts__title}>My posts</h2>
@@ -18,9 +25,9 @@ const MyPosts = function () {
         </form>
       </div>
       <div className={styles.post__wrapper}>
-        <Post text='Hey you, yes you! Fuck off!' like='2' />
-        <Post text='and you fuck off too' like='3' />
-        <Post text='and you' />
+        <Post text={postData[0].message} like={postData[0].likesCount} />
+        <Post text={postData[1].message} like={postData[1].likesCount} />
+        <Post text={postData[2].message} like={postData[2].likesCount} />
       </div>
     </div>
   );

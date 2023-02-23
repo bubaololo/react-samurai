@@ -1,12 +1,12 @@
 import MyPosts from "./MyPosts/MyPosts";
-import classes from "./Profile.module.css";
-import ProfileInfo from './ProfileInfo/ProfileInfo';
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = function () {
+
+const Profile = function (props) {
   return (
     <div>
-<ProfileInfo />
-      <MyPosts />
+      <ProfileInfo />
+      <MyPosts posts={ props.posts } />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import styles from "./Dialogs.module.css";
-import { NavLink, Routes, Route } from "react-router-dom";
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import MessageInput from './MessageInput/MessageInput';
 
 
 
@@ -17,7 +17,10 @@ const Dialogs = function (props) {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>{dialogsElements}</div>
+      <div>
       <div className={styles.messages}>{messagesElements}</div>
+<MessageInput />
+      </div>
     </div>
   );
 };

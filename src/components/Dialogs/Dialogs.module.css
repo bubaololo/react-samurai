@@ -8,6 +8,8 @@
     margin: 16px;
     background-color: beige;
     border-radius: 10px;
+    display: flex;
+    gap: 12px;
 }
 
 .dialog.active {
@@ -31,4 +33,12 @@
     padding: 16px;
     display: inline-block;
     border-radius: 10px;
+}
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -10,18 +10,24 @@ const MyPosts = function (props) {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    let text = newPostElement.current.value;
-    alert(text);
+    props.addPost();
+    props.updateNewPostText('');
   }
-
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+    console.log(props.newPostText);
+  }
 
   return (
     <div className={styles.posts}>
       <h2 className={styles.posts__title}>My posts</h2>
       <div className={styles.posts_new}>
-        <form className={styles.posts__form}>
+        <div className={styles.posts__form}>
           <textarea
+              onChange={onPostChange}
               ref={newPostElement}
+              value={props.newPostText}
             className={styles.posts__textarea}
             name=""
             id=""
@@ -29,7 +35,7 @@ const MyPosts = function (props) {
             placeholder="new post"
           ></textarea>
           <button onClick={addPost} className={styles.posts__submit}>Добавить пост</button>
-        </form>
+        </div>
       </div>
       <div className={styles.post__wrapper}>{posts}</div>
     </div>

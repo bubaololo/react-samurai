@@ -7,7 +7,7 @@ import MessageInput from './MessageInput/MessageInput';
 
 
 const Dialogs = function (props) {
-
+console.log(props);
   let dialogsElements = props.state.dialogs.map((dialog) => (
     <DialogItem name={dialog.name} id={dialog.id} img={dialog.img} />
   ));

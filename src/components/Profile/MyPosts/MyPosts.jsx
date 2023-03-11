@@ -6,17 +6,14 @@ const MyPosts = function (props) {
     <Post text={post.message} like={post.likesCount} />
   ));
 
-
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.addPost();
-    props.updateNewPostText('');
+props.dispatch({ type: 'ADD-POST' });
   }
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
-    console.log(props.newPostText);
+    props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', text: text });
   }
 
   return (
@@ -29,11 +26,9 @@ const MyPosts = function (props) {
               ref={newPostElement}
               value={props.newPostText}
             className={styles.posts__textarea}
-            name=""
-            id=""
             rows="4"
             placeholder="new post"
-          ></textarea>
+          />
           <button onClick={addPost} className={styles.posts__submit}>Добавить пост</button>
         </div>
       </div>

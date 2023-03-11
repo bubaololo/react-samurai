@@ -1,6 +1,3 @@
-let rerenderEntireTree = () => {
-  console.log('yo')
-}
 let store = {
   _state: {
     profilePage: {
@@ -43,30 +40,40 @@ let store = {
       ]
     }
   },
-
+  _callSubscriber() {
+    console.log('yo')
+  },
   getState() {
     return this._state
   },
-
-  addPost() {
-    let newPost = {
-      id: 5,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0
-    }
-    this._state.profilePage.posts.push(newPost)
-    rerenderEntireTree(this);
-  },
-
-  updateNewPostText(newText) {
-    console.log(this)
-    this._state.profilePage.newPostText = newText;
-    rerenderEntireTree(this);
-  },
-
   subscribe(observer) {
-    rerenderEntireTree = observer;
+    this._callSubscriber = observer;
+  },
+
+  dispatch(action) { // { type: 'ADD-POST' }
+console.log(action)
+    switch (action.type) {
+      case 'ADD-POST':
+        let newPost = {
+          id: 5,
+          message: this._state.profilePage.newPostText,
+          likesCount: 0
+        }
+        this._state.profilePage.posts.push(newPost)
+        this._callSubscriber(this);
+        break;
+      case 'UPDATE-NEW-POST-TEXT':
+        this._state.profilePage.newPostText = action.text;
+        this._callSubscriber(this);
+        break;
+
+      default:
+        console.log(`Sorry, we are out of ${action.type}.`);
+    }
+
+
   }
+
 }
 window.store = store;
 export default store;

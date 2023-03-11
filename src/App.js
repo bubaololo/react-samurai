@@ -14,7 +14,9 @@ const App = (props) => {
         <div className="content_wrapper">
           <Routes>
             <Route exact path="dialogs/*" element={<Dialogs state={props.store.getState().dialogsPage}  />} />
-            <Route path="profile" element={<Profile profilePage={ props.store.getState().profilePage } addPost={props.store.addPost.bind(props.store)} updateNewPostText={props.store.updateNewPostText.bind(props.store)} />} />
+            <Route path="profile" element={ <Profile profilePage={ props.store.getState().profilePage }
+                // addPost={props.store.addPost.bind(props.store)}
+                dispatch={props.store.dispatch.bind(props.store)} />} />
           </Routes>
         </div>
       </div>

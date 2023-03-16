@@ -43,7 +43,7 @@
     background-size: cover;
 }
 .messageInputForm {
-    display: flex;
+    /*display: flex;*/
 }
 .messageTextarea {
     display: flex;

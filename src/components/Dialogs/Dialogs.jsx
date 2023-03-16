@@ -5,7 +5,6 @@ import MessageInput from './MessageInput/MessageInput';
 
 
 const Dialogs = function(props) {
-
   let dialogsElements = props.state.dialogs.map((dialog) => (
       <DialogItem name={dialog.name} id={dialog.id} img={dialog.img}/>
   ));
@@ -18,7 +17,7 @@ const Dialogs = function(props) {
         <div className={styles.dialogsItems}>{dialogsElements}</div>
         <div>
           <div className={styles.messages}>
-            <div>{messagesElements}</div>
+            {messagesElements}
 
           </div>
           <MessageInput state={props.state} dispatch = {props.dispatch} />

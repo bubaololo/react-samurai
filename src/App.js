@@ -6,6 +6,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = (props) => {
+
   let state = props.store.getState()
   return (
     <BrowserRouter>

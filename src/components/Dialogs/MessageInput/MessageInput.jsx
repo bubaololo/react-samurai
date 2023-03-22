@@ -7,14 +7,15 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from '../../../redux/di
 
 
 const MessageInput = function (props) {
+
   let addMessage = () => {
-props.dispatch(sendMessageCreator())
+    props.onAddMessage()
   }
 
   let onMessageChange = (e) => {
     let text = e.target.value;
 
-props.dispatch(updateNewMessageBodyCreator(text))
+    props.onMessageChange(text);
   }
 
 

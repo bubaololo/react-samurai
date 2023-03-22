@@ -5,10 +5,10 @@ import MessageInput from './MessageInput/MessageInput';
 
 
 const Dialogs = function(props) {
-  let dialogsElements = props.state.dialogs.map((dialog) => (
+  let dialogsElements = props.dialogs.map((dialog) => (
       <DialogItem name={dialog.name} id={dialog.id} img={dialog.img}/>
   ));
-  let messagesElements = props.state.messages.map((message) => (
+  let messagesElements = props.messages.map((message) => (
       <Message message={message.message}/>
   ));
 
@@ -20,7 +20,7 @@ const Dialogs = function(props) {
             {messagesElements}
 
           </div>
-          <MessageInput state={props.state} dispatch = {props.dispatch} />
+          <MessageInput onAddMessage={props.onAddMessage} onMessageChange={props.onMessageChange} />
         </div>
       </div>
   );

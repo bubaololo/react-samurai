@@ -1,6 +1,6 @@
 import styles from "./../Dialogs.module.css";
 import React from 'react';
-import {sendMessageCreator, updateNewMessageBodyCreator} from '../../../redux/dialogs-reducer';
+
 
 
 
@@ -8,7 +8,7 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from '../../../redux/di
 
 const MessageInput = function (props) {
 
-  let addMessage = () => {
+  let onAddMessage = () => {
     props.onAddMessage()
   }
 
@@ -28,7 +28,7 @@ return(
               rows="5"
               placeholder="new message"
           ></textarea>
-    <button onClick={addMessage} className={styles.messageSubmit}>Отправить собщение</button>
+    <button onClick={onAddMessage} className={styles.messageSubmit}>Отправить сообщение</button>
 </div>
 
 

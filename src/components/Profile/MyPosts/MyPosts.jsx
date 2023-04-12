@@ -15,9 +15,8 @@ props.addPost();
   }
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    props.newPostText(text);
   }
-
   return (
     <div className={styles.posts}>
       <h2 className={styles.posts__title}>My posts</h2>
@@ -26,7 +25,7 @@ props.addPost();
           <textarea
               onChange={onPostChange}
               ref={newPostElement}
-              value={props.newPostText}
+              value={props.currentPostText}
             className={styles.posts__textarea}
             rows="4"
             placeholder="new post"

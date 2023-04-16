@@ -7,10 +7,10 @@ import MessageInput from './MessageInput/MessageInput';
 const Dialogs = function(props) {
 
   let dialogsElements = props.dialogs.map((dialog) => (
-      <DialogItem name={dialog.name} id={dialog.id} img={dialog.img}/>
+      <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} img={dialog.img}/>
   ));
   let messagesElements = props.messages.map((message) => (
-      <Message message={message.message}/>
+      <Message message={message.message} key={message.id}/>
   ));
 
   return (

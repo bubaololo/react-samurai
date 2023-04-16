@@ -1,5 +1,6 @@
 
 
+
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 const SEND_MESSAGE = 'SEND_MESSAGE';
 
@@ -41,26 +42,26 @@ const dialogsReducer = (state = initialState, action) => {
 
 
 
-
-
   switch (action.type) {
 
     case UPDATE_NEW_MESSAGE_BODY:
-      state.newMessageBody = action.body;
-      return state
-    case SEND_MESSAGE:
-      let stateCopy = {
+       return  {
         ...state,
-        messages: [...state.messages]
+         newMessageBody: action.body
       };
+
+    case SEND_MESSAGE:
       let body = state.newMessageBody;
-      state.newMessageBody = '';
-      stateCopy.messages.push({id: 6, message: body});
-      return stateCopy
+      return {
+        ...state,
+        newMessageBody:'',
+        messages: [...state.messages, {id: 6, message: body}]
+      };
 
     default:
       console.log(`Sorry, we are out of ${action.type}.`);
       return state
+
   }
 
 

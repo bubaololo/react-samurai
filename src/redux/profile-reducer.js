@@ -1,4 +1,4 @@
- const ADD_POST = 'ADD-POST';
+const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
@@ -20,17 +20,20 @@ const profileReducer = (state = initialState, action) => {
         message: state.currentPostText,
         likesCount: 0
       }
-      let stateCopy = {...state};
-      stateCopy.posts = [...state.posts];
-      stateCopy.posts.push(newPost);
-      stateCopy.currentPostText = '';
-      return stateCopy;
+      return {
+        ...state,
+        posts: [...state.posts, newPost],
+        currentPostText: ''
+      };
+
     }
 
     case UPDATE_NEW_POST_TEXT: {
-      let stateCopy = {...state};
-      stateCopy.currentPostText = action.text;
-      return stateCopy;
+      return {
+        ...state,
+        currentPostText: action.text
+      };
+
     }
     default:
       console.log(`Sorry, we are out of ${action.type}.`);
